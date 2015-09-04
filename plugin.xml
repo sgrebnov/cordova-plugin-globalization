@@ -128,7 +128,17 @@
         <js-module src="src/windows/GlobalizationProxy.js" name="GlobalizationProxy">
             <runs/>
         </js-module>
-        <framework src="src/Windows/GlobalizationProxy.winmd" custom="true"/>
+        <!-- Windows 8 and 8.1 -->
+        <framework src="src/Windows/win8/GlobalizationProxy.winmd" custom="true"
+            target-dir="sharedDir" versions="&lt;=8.1" target-dir="win81"/>
+        <!-- Windows 10 and higher -->
+        <framework src="src/Windows/win10/arm/GlobalizationProxy.winmd" custom="true"
+            target-dir="sharedDir" versions="&gt;=10.0" arch="arm" target-dir="win10/arm"/>
+        <framework src="src/Windows/win10/x86/GlobalizationProxy.winmd" custom="true"
+            target-dir="sharedDir" versions="&gt;=10.0" arch="x86" target-dir="win10/x86"/>
+        <framework src="src/Windows/win10/x64/GlobalizationProxy.winmd" custom="true"
+            target-dir="sharedDir" versions="&gt;=10.0" arch="x64" target-dir="win10/x64"/>
+
     </platform>
 
     <!-- tizen -->
